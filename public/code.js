@@ -33,3 +33,4 @@ figma.ui.postMessage({ count: {
         color: textNodesWithNoFillStyle.length,
         comp: detachedNodes.length + partialNodes.length,
     } });
+//# sourceMappingURL=code.js.map
