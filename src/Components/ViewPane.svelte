@@ -1,6 +1,8 @@
 <script>
   import { selected, count, data } from "../store.js";
 
+  
+
 
 </script>
 
@@ -17,10 +19,8 @@
     There {$count.all > 1 ? 'are' : 'is'} {$count.all} problem{$count.all > 1 ? 's' : ''}
   </div>
 {:else if $selected == 1}
-  <div>
-    There {$count.type > 1 ? 'are' : 'is'} {$count.type} Typographic problem{$count.type > 1 ? 's' : ''}
-    
-  </div>
+<div>dd</div>
+
 {:else if $selected == 2}
   <div>
     There {$count.color > 1 ? 'are' : 'is'} {$count.color} Color problem{$count.color > 1 ? 's' : ''}

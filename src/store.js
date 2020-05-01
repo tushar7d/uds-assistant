@@ -4,6 +4,6 @@ export const selected = writable(0);
 
 export const count = writable({all: 0, type: 0, color: 0, comp: 0})
 
-export const data = writable({ tsm: [], tcm: [], dc: [], pc: [], fsm: [] })
+export const data = writable({ })
 
 

@@ -5,6 +5,7 @@
   onmessage = (event) => {
   
   data.set(event.data.pluginMessage)
+  
 
   console.log($data)
 
