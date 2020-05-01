@@ -1,19 +1,11 @@
 <script>
-  import { count } from "./store";
+  import { count, data } from "./store";
   import Sidebar from "./Components/Sidebar.svelte";
   import ViewPane from "./Components/ViewPane.svelte";
-  let compDetached = 0;
-  let textStyles = 0;
-  let textFillStyles = 0;
-  let data = {};
-
   onmessage = event => {
-
-
     count.set(event.data.pluginMessage.count);
     
   };
-  
 </script>
 
 <style>

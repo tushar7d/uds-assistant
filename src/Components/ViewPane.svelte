@@ -1,5 +1,7 @@
 <script>
-  import { selected, count } from "../store.js";
+  import { selected, count, data } from "../store.js";
+
+
 </script>
 
 <style>
@@ -11,22 +13,20 @@
 </style>
 
 {#if $selected == 0}
-<div>
-
-There  {$count.all>1 ? "are":"is"} {$count.all} problem{$count.all>1 ? "s":""}
-
-</div>
+  <div>
+    There {$count.all > 1 ? 'are' : 'is'} {$count.all} problem{$count.all > 1 ? 's' : ''}
+  </div>
 {:else if $selected == 1}
-<div>
-There  {$count.type>1 ? "are":"is"} {$count.type} Typographic problem{$count.type>1 ? "s":""}
-
-</div>
-	
+  <div>
+    There {$count.type > 1 ? 'are' : 'is'} {$count.type} Typographic problem{$count.type > 1 ? 's' : ''}
+    
+  </div>
 {:else if $selected == 2}
-  <div>There  {$count.color>1 ? "are":"is"} {$count.color} Color problem{$count.color>1 ? "s":""}</div>
-
-  {:else if $selected == 3}
-  <div>There {$count.comp>1 ? "are":"is "} {$count.comp} Component problem{$count.comp>1 ? "s":""}</div>
-
-	
+  <div>
+    There {$count.color > 1 ? 'are' : 'is'} {$count.color} Color problem{$count.color > 1 ? 's' : ''}
+  </div>
+{:else if $selected == 3}
+  <div>
+    There {$count.comp > 1 ? 'are' : 'is '} {$count.comp} Component problem{$count.comp > 1 ? 's' : ''}
+  </div>
 {/if}
