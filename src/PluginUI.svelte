@@ -1,11 +1,15 @@
 <script>
-  import { count, data } from "./store";
+  import {data} from './store'
   import Sidebar from "./Components/Sidebar.svelte";
   import ViewPane from "./Components/ViewPane.svelte";
-  onmessage = event => {
-    count.set(event.data.pluginMessage.count);
-    
-  };
+  onmessage = (event) => {
+  
+  data.set(event.data.pluginMessage)
+
+  console.log($data)
+
+}
+ 
 </script>
 
 <style>

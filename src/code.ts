@@ -1,6 +1,7 @@
 let allnodes = figma.currentPage;
 
 let tsm = [];
+let tsmn = [];
 let tcm = [];
 let dc = [];
 let pc = [];
@@ -11,6 +12,7 @@ let FindErrors = async (nodes) => {
     for (const child of nodes.children) {
       if (child.type === "TEXT" && child.textStyleId === "") {
         tsm.push(child);
+        tsmn.push(child.name);
       } else if (
         child.type === "TEXT" &&
         child.textStyleId === "" &&
@@ -38,10 +40,33 @@ let FindErrors = async (nodes) => {
   }
 };
 
+let getNames = (nodes) => {
+  let s = [];
+  nodes.forEach((e) => {
+    s.push(e.name);
+  });
+
+  return s;
+};
+
+let getId = (nodes) => {
+  let s = [];
+  nodes.forEach((e) => {
+    s.push(e.id);
+  });
+
+  return s;
+};
+
 FindErrors(allnodes).then(() => {
-  console.log(tsm);
-  console.log(tcm);
-  console.log(dc);
-  console.log(pc);
-  console.log(fsm);
+  figma.showUI(__html__);
+  figma.ui.resize(450, 300);
+
+  figma.ui.postMessage({
+    tsm: { name: getNames(tsm), id: getId(tsm) },
+    tcm: { name: getNames(tcm), id: getId(tcm) },
+    dc: { name: getNames(dc), id: getId(dc) },
+    pc: { name: getNames(pc), id: getId(pc) },
+    fsm: { name: getNames(fsm), id: getId(fsm) },
+  });
 });
