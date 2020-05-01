@@ -8,8 +8,12 @@
   let data = {};
 
   onmessage = event => {
-    count.set(event.data.pluginMessage);
+
+
+    count.set(event.data.pluginMessage.count);
+    
   };
+  
 </script>
 
 <style>
