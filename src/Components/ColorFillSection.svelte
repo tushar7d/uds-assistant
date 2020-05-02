@@ -14,10 +14,10 @@
 </style>
 
 <div>
-  <h1>Text Style Missing</h1>
+  <h1>Fill Style Missing for Text layers</h1>
 
-  {#each $data.tsm.name as dt, i}
-    <div>Name: {$data.tsm.name[i]} id:{$data.tsm.id[i]}</div>
+  {#each $data.tcm.name as dt, i}
+    <div>Name: {$data.tcm.name[i]} id:{$data.tcm.id[i]}</div>
   {/each}
 
 </div>

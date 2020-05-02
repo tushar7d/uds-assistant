@@ -1,7 +1,6 @@
 let allnodes = figma.currentPage;
 
 let tsm = [];
-let tsmn = [];
 let tcm = [];
 let dc = [];
 let pc = [];
@@ -10,15 +9,14 @@ let fsm = [];
 let FindErrors = async (nodes) => {
   if ("children" in nodes) {
     for (const child of nodes.children) {
-      if (child.type === "TEXT" && child.textStyleId === "") {
-        tsm.push(child);
-        tsmn.push(child.name);
-      } else if (
-        child.type === "TEXT" &&
-        child.textStyleId === "" &&
-        child.fillStyleId === ""
-      ) {
-        tcm.push(child);
+      if (child.type === "TEXT") {
+        if (child.textStyleId === "") {
+          tsm.push(child);
+        }
+
+        if (child.fillStyleId === "") {
+          tcm.push(child);
+        }
       } else if (child.type === "RECTANGLE" && child.fillStyleId === "") {
         fsm.push(child);
       } else if (
@@ -28,13 +26,15 @@ let FindErrors = async (nodes) => {
       ) {
         dc.push(child);
       } else if (
-        child.type === "INSTANCE" &&
+        child.type !== "INSTANCE" &&
         child.name.search("/") > -1 &&
         child.name.search("_") === 0
       ) {
         pc.push(child);
       } else {
-        FindErrors(child);
+        if (child.type !== "INSTANCE") {
+          FindErrors(child);
+        }
       }
     }
   }
@@ -70,3 +70,6 @@ FindErrors(allnodes).then(() => {
     fsm: { name: getNames(fsm), id: getId(fsm) },
   });
 });
+
+console.log("t");
+console.log([tsm, tcm, dc, pc, fsm]);

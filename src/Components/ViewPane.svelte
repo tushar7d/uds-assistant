@@ -1,9 +1,7 @@
 <script>
   import { selected, count, data } from "../store.js";
-
-  
-
-
+  import TextSection from './TextSection.svelte';
+  import ColorFillSection from './ColorFillSection.svelte';
 </script>
 
 <style>
@@ -19,12 +17,10 @@
     There {$count.all > 1 ? 'are' : 'is'} {$count.all} problem{$count.all > 1 ? 's' : ''}
   </div>
 {:else if $selected == 1}
-<div>dd</div>
+<TextSection />
 
 {:else if $selected == 2}
-  <div>
-    There {$count.color > 1 ? 'are' : 'is'} {$count.color} Color problem{$count.color > 1 ? 's' : ''}
-  </div>
+  <ColorFillSection />
 {:else if $selected == 3}
   <div>
     There {$count.comp > 1 ? 'are' : 'is '} {$count.comp} Component problem{$count.comp > 1 ? 's' : ''}
