@@ -23,14 +23,11 @@
     
    
   }
-  .fixed{
-    position: fixed; 
-  }
+ 
 </style>
 
 <div>
-<div class="fixed">
+
   <Sidebar />
-  </div>
   <ViewPane />
 </div>

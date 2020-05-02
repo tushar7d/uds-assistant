@@ -73,3 +73,10 @@ FindErrors(allnodes).then(() => {
 
 console.log("t");
 console.log([tsm, tcm, dc, pc, fsm]);
+
+figma.ui.onmessage = (message) => {
+  let node = figma.getNodeById(message.id);
+  figma.viewport.scrollAndZoomIntoView([node]);
+
+  figma.currentPage.selection = [node as SceneNode];
+};
