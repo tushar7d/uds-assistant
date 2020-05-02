@@ -17,13 +17,20 @@
   div {
     margin: 0px;
     padding: 0px;
-    width: 400px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     display: flex;
+    
+   
+  }
+  .fixed{
+    position: fixed; 
   }
 </style>
 
 <div>
+<div class="fixed">
   <Sidebar />
+  </div>
   <ViewPane />
 </div>

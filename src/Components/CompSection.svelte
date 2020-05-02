@@ -12,23 +12,19 @@
   h1 {
     font-size: 15px;
   }
-
-  
-  
 </style>
 
-<div >
+<div>
 
+  <h1>Detached Components</h1>
 
-  <h1>Fill Style Missing for Text layers</h1>
-
-  {#each $data.tcm.name as dt, i}
-    <div>Name: {$data.tcm.name[i]} id:{$data.tcm.id[i]}</div>
+  {#each $data.dc.name as dt, i}
+    <div>Name: {$data.dc.name[i]} id:{$data.dc.id[i]}</div>
   {/each}
 
-  <h1>Fill Style Missing for other layers</h1>
-  {#each $data.fsm.name as dt, i}
-    <div>Name: {$data.fsm.name[i]} id:{$data.fsm.id[i]}</div>
+  <h1>Detached Partial Components</h1>
+  {#each $data.pc.name as dt, i}
+    <div>Name: {$data.pc.name[i]} id:{$data.pc.id[i]}</div>
   {/each}
 
 </div>

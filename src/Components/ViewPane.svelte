@@ -2,6 +2,7 @@
   import { selected, count, data } from "../store.js";
   import TextSection from "./TextSection.svelte";
   import ColorFillSection from "./ColorFillSection.svelte";
+  import CompSection from './CompSection.svelte'
 </script>
 
 <style>
@@ -9,7 +10,12 @@
     margin-top: 18px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      overflow: hidden;
+     
       
+  }
+  main{
+     margin-left: 128px;
   }
  
 </style>
@@ -23,8 +29,6 @@
 {:else if $selected == 2}
   <ColorFillSection />
 {:else if $selected == 3}
-  <div>
-    There {$count.comp > 1 ? 'are' : 'is '} {$count.comp} Component problem{$count.comp > 1 ? 's' : ''}
-  </div>
+  <CompSection />
 {/if}
 </main>
