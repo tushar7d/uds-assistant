@@ -16,6 +16,7 @@
   }
   main{
      margin-left: 128px;
+    
   }
  
 </style>
