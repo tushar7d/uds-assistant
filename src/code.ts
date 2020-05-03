@@ -21,7 +21,11 @@ let FindErrors = async (nodes) => {
           tcm.push(child);
         }
       } else if (
-        (child.type === "RECTANGLE" || child.type === "ELLIPSE") &&
+        (child.type === "RECTANGLE" ||
+          child.type === "ELLIPSE" ||
+          child.type === "LINE" ||
+          child.type === "POLYGON" ||
+          child.type === "VECTOR") &&
         child.fillStyleId === ""
       ) {
         // check Shape fill style id
@@ -77,9 +81,6 @@ FindErrors(allnodes).then(() => {
     fsm: { name: getNames(fsm), id: getId(fsm) },
   });
 });
-
-console.log("t");
-console.log([tsm, tcm, dc, pc, fsm]);
 
 figma.ui.onmessage = (message) => {
   let node = figma.getNodeById(message.id);
