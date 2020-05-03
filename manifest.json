@@ -1,6 +1,6 @@
 {
-  "name": "UDS Assist",
-  "id": "838839903320667614",
+  "name": "UDS Assistant",
+  "id": "795096273369409539",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "index.html"
