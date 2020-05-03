@@ -1,7 +1,7 @@
 <script>
   import { data } from "../store.js";
   import { selectNode, handleClick } from "../common.js";
-
+  import Item from './Item.svelte';
 
 </script>
 
@@ -26,7 +26,7 @@
       on:click={() => {
         handleClick($data.dc.id[i]);
       }}>
-      Name: {$data.dc.name[i]} id:{$data.dc.id[i]}
+      <Item name={$data.dc.name[i]} id={$data.dc.id[i]} />
     </div>
   {/each}
 
@@ -36,7 +36,7 @@
       on:click={() => {
         handleClick($data.pc.id[i]);
       }}>
-      Name: {$data.pc.name[i]} id:{$data.pc.id[i]}
+       <Item name={$data.pc.name[i]} id={$data.pc.id[i]} />
     </div>
   {/each}
 

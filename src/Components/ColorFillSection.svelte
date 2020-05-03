@@ -1,6 +1,7 @@
 <script>
   import { data } from "../store.js";
     import { selectNode, handleClick } from "../common.js";
+     import Item from './Item.svelte';
 </script>
 
 <style>
@@ -26,14 +27,18 @@
   {#each $data.tcm.name as dt, i}
     <div on:click={() => {
         handleClick($data.tcm.id[i]);
-      }} >Name: {$data.tcm.name[i]} id:{$data.tcm.id[i]}</div>
+      }} >
+      <Item name={$data.tcm.name[i]} id={$data.tcm.id[i]} />
+  </div>
   {/each}
 
   <h1>Fill Style Missing for other layers</h1>
   {#each $data.fsm.name as dt, i}
     <div on:click={() => {
         handleClick($data.fsm.id[i]);
-      }} >Name: {$data.fsm.name[i]} id:{$data.fsm.id[i]}</div>
+      }} >
+      <Item name={$data.fsm.name[i]} id={$data.fsm.id[i]} />
+      </div>
   {/each}
 
 </div>

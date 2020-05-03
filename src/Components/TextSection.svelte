@@ -1,6 +1,8 @@
 <script>
   import { data } from "../store.js";
   import { selectNode, handleClick } from "../common.js";
+  import Item from './Item.svelte';
+
 </script>
 
 <style>
@@ -21,7 +23,9 @@
   {#each $data.tsm.name as dt, i}
     <div on:click={() => {
         handleClick($data.tsm.id[i]);
-      }} >Name: {$data.tsm.name[i]} id:{$data.tsm.id[i]}</div>
+      }} >
+      <Item name={$data.tsm.name[i]} id={$data.tsm.id[i]} />
+      </div>
   {/each}
 
 </div>
