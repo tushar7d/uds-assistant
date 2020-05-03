@@ -17,7 +17,9 @@
 
 :global(body) {
 		
-		margin: 0;
+		margin: 0px;
+    padding: 0px;
+    font-size: 14px;
 	}
 
   div {
