@@ -14,14 +14,18 @@
 </script>
 
 <style>
+
+:global(body) {
+		
+		margin: 0;
+	}
+
   div {
     margin: 0px;
     padding: 0px;
     width: 100%;
     height: 100%;
     display: flex;
-    
-   
   }
  
 </style>

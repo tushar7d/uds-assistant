@@ -1,5 +1,4 @@
 <script>
-
   export let name = "0";
 </script>
 
@@ -7,25 +6,22 @@
   .container {
     width: 308px;
     border-bottom: 1px solid #e5e5e5;
-    
     padding: 6px;
     margin: 3px;
-    
   }
-  .container:hover{
-      background-color: #EBF3FA;
-     border-bottom: 1px solid #EBF3FA;
-      border-radius: 6px;
+  .container:hover {
+    background-color: #ebf3fa;
+    border-bottom: 1px solid #ebf3fa;
+    border-radius: 6px;
   }
-  .h{
-
-      font-size: 12px;
-      color: #bbbbbb;
-      margin-bottom: 3px;}
-  .sh{
-
-      font-size: 16px;
-      color: #575757;
+  .h {
+    font-size: 12px;
+    color: #bbbbbb;
+    margin-bottom: 3px;
+  }
+  .sh {
+    font-size: 16px;
+    color: #575757;
   }
 </style>
 

@@ -15,7 +15,6 @@ let FindErrors = async (nodes) => {
           // check text style ID
           tsm.push(child);
         }
-
         if (child.fillStyleId === "") {
           // check text fill style ID
           tcm.push(child);
