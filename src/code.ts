@@ -10,14 +10,21 @@ let FindErrors = async (nodes) => {
   if ("children" in nodes) {
     for (const child of nodes.children) {
       if (child.type === "TEXT") {
+        // check text nodes
         if (child.textStyleId === "") {
+          // check text style ID
           tsm.push(child);
         }
 
         if (child.fillStyleId === "") {
+          // check text fill style ID
           tcm.push(child);
         }
-      } else if (child.type === "RECTANGLE" && child.fillStyleId === "") {
+      } else if (
+        (child.type === "RECTANGLE" || child.type === "ELLIPSE") &&
+        child.fillStyleId === ""
+      ) {
+        // check Shape fill style id
         fsm.push(child);
       } else if (
         child.type !== "INSTANCE" &&
