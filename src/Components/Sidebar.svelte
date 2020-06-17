@@ -2,7 +2,7 @@
   import { selected } from "../store.js";
 
   let items = [
-    { name: "All", selected: true, count: 0 },
+    { name: "About", selected: true, count: 0 },
     { name: "Type", selected: false, count: 0 },
     { name: "Color", selected: false, count: 0 },
     { name: "Components", selected: false, count: 0 }

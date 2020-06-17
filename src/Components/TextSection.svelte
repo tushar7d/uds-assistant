@@ -1,7 +1,8 @@
 <script>
-  import { data } from "../store.js";
+  
   import { selectNode, handleClick } from "../common.js";
   import Item from './Item.svelte';
+  import { data } from "../store.js";
 
 </script>
 
@@ -10,10 +11,12 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       width: 100%;
+      cursor: pointer;
   }
 
   h1 {
     font-size: 15px;
+    cursor: default;
   }
 </style>
 
